@@ -3,6 +3,10 @@ import "@fontsource/inter";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import MenuSection from "@/components/Menu";
+import GiftCard from "@/components/GiftCard";
+import Delivery from "@/components/Delivery";
+import Pickup from "@/components/Pickup";
+import Reservation from "@/components/Reservation";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -11,6 +15,10 @@ const Index = () => {
       <Navbar />
       <Hero />
       <MenuSection />
+      <GiftCard />
+      <Delivery />
+      <Pickup />
+      <Reservation />
       <Footer />
     </div>
   );
