@@ -65,10 +65,10 @@ const MenuSection = () => {
   return (
     <section id="menu" className="py-20 px-4 bg-background">
       <div className="container mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12">Our Menu</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in">Our Menu</h2>
         
         <Tabs defaultValue="food" className="w-full">
-          <TabsList className="grid w-full max-w-[400px] grid-cols-2 mx-auto mb-8">
+          <TabsList className="grid w-full max-w-[400px] grid-cols-2 mx-auto mb-8 animate-fade-in">
             <TabsTrigger value="food">Food</TabsTrigger>
             <TabsTrigger value="drink">Drinks</TabsTrigger>
           </TabsList>
@@ -77,13 +77,18 @@ const MenuSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {menuItems
                 .filter(item => item.category === "food")
-                .map(item => (
-                  <Card key={item.id} className="group overflow-hidden transition-all duration-300 hover:shadow-lg">
+                .map((item, index) => (
+                  <Card 
+                    key={item.id} 
+                    className="group overflow-hidden transition-all duration-300 hover:shadow-lg animate-fade-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
                     <div className="aspect-video overflow-hidden">
                       <img
                         src={item.image}
                         alt={item.name}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
                       />
                     </div>
                     <CardHeader>
@@ -104,13 +109,18 @@ const MenuSection = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {menuItems
                 .filter(item => item.category === "drink")
-                .map(item => (
-                  <Card key={item.id} className="group overflow-hidden transition-all duration-300 hover:shadow-lg">
+                .map((item, index) => (
+                  <Card 
+                    key={item.id} 
+                    className="group overflow-hidden transition-all duration-300 hover:shadow-lg animate-fade-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
                     <div className="aspect-video overflow-hidden">
                       <img
                         src={item.image}
                         alt={item.name}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
                       />
                     </div>
                     <CardHeader>
