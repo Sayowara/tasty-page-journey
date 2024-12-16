@@ -118,3 +118,34 @@
     transform: translateY(0);
   }
 }
+
+/* Sticky Navbar Animation */
+.nav-sticky {
+  @apply shadow-md bg-background/95 backdrop-blur-md;
+  animation: slideDown 0.35s ease-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Section Spacing */
+section {
+  @apply py-20 px-4 scroll-mt-20;
+}
+
+/* Typography Refinements */
+.section-title {
+  @apply text-4xl md:text-5xl font-bold mb-6 text-center;
+}
+
+.section-description {
+  @apply text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-center mb-12;
+}
